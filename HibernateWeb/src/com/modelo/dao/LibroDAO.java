@@ -1,0 +1,29 @@
+package com.modelo.dao;
+
+import java.util.List;
+
+import org.hibernate.Session;
+
+import com.modelo.bo.Autor;
+import com.modelo.bo.HibernateUtil;
+import com.modelo.bo.Libro;
+
+public class LibroDAO {
+	public static List<Libro> buscarTodos() {		
+		Session sessionHibernate = HibernateUtil.getSessionFactory().openSession();
+		sessionHibernate.beginTransaction();
+		List<Libro> result = (List<Libro>) sessionHibernate.createQuery("from Libro").list();
+		sessionHibernate.getTransaction().commit();
+		return result;
+	}
+	public static List<Autor> buscarAutores(int idlibro) {		
+		Session sessionHibernate = HibernateUtil.getSessionFactory().openSession();
+		sessionHibernate.beginTransaction();
+		List<Autor> result = (List<Autor>) sessionHibernate.createQuery(
+				" from Autor as autor "
+				+ "inner join libro_autor.idlibro as idlibro"
+				+ "where idlibro=" + idlibro ).list();
+		sessionHibernate.getTransaction().commit();
+		return result;
+	}
+}

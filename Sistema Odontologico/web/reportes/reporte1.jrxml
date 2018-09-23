@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporte1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="586950ea-e394-4a1d-8824-c7b55e4aedf9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     t_campana.`id_campana` AS t_campana_id_campana,
+     t_campana.`c_nombre` AS t_campana_c_nombre,
+     t_campana.`c_contacto` AS t_campana_c_contacto,
+     t_campana.`c_fecha` AS t_campana_c_fecha,
+     t_campana.`c_lugar` AS t_campana_c_lugar,
+     t_campana.`c_observacion` AS t_campana_c_observacion,
+     t_campana.`c_conclusion` AS t_campana_c_conclusion,
+     t_campana.`c_estado` AS t_campana_c_estado,
+     t_atencion.`id_atencion` AS t_atencion_id_atencion,
+     t_atencion.`id_paciente` AS t_atencion_id_paciente,
+     t_atencion.`id_personal` AS t_atencion_id_personal,
+     t_atencion.`id_campana` AS t_atencion_id_campana,
+     t_atencion.`c_observaciones` AS t_atencion_c_observaciones,
+     t_paciente.`id_paciente` AS t_paciente_id_paciente,
+     t_paciente.`c_nombres` AS t_paciente_c_nombres,
+     t_paciente.`c_apellidos` AS t_paciente_c_apellidos,
+     t_paciente.`c_fecha_nac` AS t_paciente_c_fecha_nac,
+     t_paciente.`c_dni` AS t_paciente_c_dni,
+     t_paciente.`c_sexo` AS t_paciente_c_sexo
+FROM
+     `t_campana` t_campana INNER JOIN `t_atencion` t_atencion ON t_campana.`id_campana` = t_atencion.`id_campana`
+     INNER JOIN `t_paciente` t_paciente ON t_atencion.`id_paciente` = t_paciente.`id_paciente`]]>
+	</queryString>
+	<field name="t_campana_c_nombre" class="java.lang.String"/>
+	<field name="t_campana_c_fecha" class="java.sql.Date"/>
+	<field name="t_campana_c_lugar" class="java.lang.String"/>
+	<field name="t_campana_c_estado" class="java.lang.String"/>
+	<field name="t_atencion_id_atencion" class="java.lang.Integer"/>
+	<field name="t_paciente_c_nombres" class="java.lang.String"/>
+	<field name="t_paciente_c_apellidos" class="java.lang.String"/>
+	<field name="t_paciente_c_fecha_nac" class="java.sql.Date"/>
+	<field name="t_paciente_c_dni" class="java.lang.String"/>
+	<field name="t_paciente_c_sexo" class="java.lang.String"/>
+	<group name="t_campana_c_nombre">
+		<groupExpression><![CDATA[$F{t_campana_c_nombre}]]></groupExpression>
+		<groupHeader>
+			<band height="144">
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="0" width="122" height="32" forecolor="#666666" backcolor="#E6E6E6" uuid="f09fd8fb-5378-42d6-a26a-8f243a3ae256"/>
+					<textElement>
+						<font size="24"/>
+					</textElement>
+					<text><![CDATA[Campaña]]></text>
+				</staticText>
+				<textField>
+					<reportElement mode="Opaque" x="122" y="0" width="433" height="32" forecolor="#006699" backcolor="#E6E6E6" uuid="84ca1b4d-4425-407b-a51c-0a8abcebfb2b"/>
+					<textElement>
+						<font size="24" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{t_campana_c_nombre}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="-20" y="36" width="595" height="1" forecolor="#666666" uuid="1da57381-2f00-4a44-a2b5-711a30d5bea5"/>
+				</line>
+				<staticText>
+					<reportElement x="0" y="42" width="122" height="21" forecolor="#666666" uuid="357851a6-a0fb-4b8d-8e3e-16e3335303bb"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Fecha]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="122" y="43" width="433" height="20" forecolor="#006699" uuid="cfbc8032-6316-4253-b6d3-a102c300910c"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{t_campana_c_fecha}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="63" width="122" height="20" forecolor="#666666" uuid="96d3fca3-4bc5-449b-a753-fc64d7c4b997"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Lugar]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="122" y="63" width="433" height="20" forecolor="#006699" uuid="f528e5b4-7a05-40a2-8353-3b11e1bc6c80"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{t_campana_c_lugar}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="83" width="112" height="20" forecolor="#666666" uuid="79c52612-2d46-4eee-b840-20cd28df942b"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Estado]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="122" y="83" width="433" height="20" forecolor="#006699" uuid="aa7c631f-7f7a-4b8b-a0a3-e583f1eae72e"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{t_campana_c_estado}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="114" width="53" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="94356a38-3eac-49aa-b476-6c6e776e8706"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Codigo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="53" y="114" width="92" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="52913abc-6ee3-4bf7-8677-c74c874dfc4b"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nombre]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="145" y="114" width="92" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="0bbf870b-b094-4c90-87bd-375e13497040"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Apellidos]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="237" y="114" width="87" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="19e8f7ac-23bf-47e4-ab05-9fe3b551dce0"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nacimiento]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="324" y="114" width="92" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="1eb8e8db-09b1-401b-a10e-81bc275e9a61"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[DNI]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="416" y="114" width="139" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="59bb0e7f-df8e-44f8-a21f-7b869bcb4e7f"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Sexo]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="t_campana_c_fecha">
+		<groupExpression><![CDATA[$F{t_campana_c_fecha}]]></groupExpression>
+		<groupHeader>
+			<band/>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="t_campana_c_lugar">
+		<groupExpression><![CDATA[$F{t_campana_c_lugar}]]></groupExpression>
+		<groupHeader>
+			<band/>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="t_campana_c_estado">
+		<groupExpression><![CDATA[$F{t_campana_c_estado}]]></groupExpression>
+		<groupHeader>
+			<band/>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="7089f5d0-57a7-4bb2-bfbe-1aca109917c8"/>
+				<staticText>
+					<reportElement x="20" y="0" width="375" height="43" forecolor="#FFFFFF" uuid="8aca5e56-685e-4538-a556-e3d32ef3e5f0"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Reporte de Campañas]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="354" y="43" width="221" height="20" forecolor="#FFFFFF" uuid="756a5dbd-2809-4448-8dd3-78988df626c1"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Asociacion Civil Kaypi Kashianchis]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band/>
+	</pageHeader>
+	<columnHeader>
+		<band height="9"/>
+	</columnHeader>
+	<detail>
+		<band height="29">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="25" width="555" height="1" uuid="dcf97960-b1ed-480f-baaf-bb9e0a0bf0de"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="53" height="20" uuid="8c5ae317-aa48-40c5-9d71-0bdec534a3e5"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_atencion_id_atencion}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="145" y="0" width="92" height="20" uuid="33e2f064-14fd-4558-ad82-42e9df99ef2d"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_paciente_c_apellidos}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="237" y="0" width="87" height="20" uuid="48e5be82-c3ff-470f-878b-08080c27665a"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_paciente_c_fecha_nac}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="324" y="0" width="92" height="20" uuid="aad66a52-983e-498c-9f4a-1f50b33e5473"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_paciente_c_dni}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="416" y="0" width="39" height="20" uuid="0688ed7f-ae72-4cb9-b2ff-36bc9107e824"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_paciente_c_sexo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="53" y="0" width="92" height="20" uuid="e4acd1d6-768c-4a00-94e1-eeb743057edf"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_paciente_c_nombres}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="e00968f3-0d2f-492f-ad1c-5ab0f6401571"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="b0c34bfc-d6f6-42e8-bb30-4181ed5b0722"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="701c157f-8367-40d5-a17d-85827d503c55"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

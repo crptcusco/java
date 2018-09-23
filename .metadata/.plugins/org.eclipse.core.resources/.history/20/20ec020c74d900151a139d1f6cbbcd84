@@ -1,0 +1,51 @@
+package com.modelo.bo;
+
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
+import javax.persistence.CascadeType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
+@Entity
+@Table(name = "libro", catalog = "db_hibernate")
+public class Autor implements java.io.Serializable {
+	@GeneratedValue
+	@Id
+	private Integer idAutor;
+	private String nombreAutor;
+
+	public Autor(Integer id, String nombreAutor) {
+		super();
+		this.idAutor = idAutor;
+		this.nombreAutor = nombreAutor;
+	}
+
+	public Autor() {
+	}
+
+	public Integer getIdAutor() {
+		return idAutor;
+	}
+
+	public void setIdAutor(Integer idAutor) {
+		this.idAutor = idAutor;
+	}
+
+	public String getNombreAutor() {
+		return nombreAutor;
+	}
+
+	public void setNombreAutor(String nombreAutor) {
+		this.nombreAutor = nombreAutor;
+	}
+	
+}

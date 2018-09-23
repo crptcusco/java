@@ -1,0 +1,3 @@
+#GlassFish 3
+#Tue Feb 23 18:37:44 COT 2016
+org.eclipse.jst.jee.server\:HibernateWeb=C\:\\Program Files\\glassfish4\\glassfish\\domains\\domain1\\eclipseApps\\HibernateWeb

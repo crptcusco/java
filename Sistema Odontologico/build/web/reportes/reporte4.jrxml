@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporte4" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b8a540d6-677f-4b5b-8061-c9a7778b3375">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     t_personal.`id_personal` AS t_personal_id_personal,
+     t_personal.`c_nombres` AS t_personal_c_nombres,
+     t_personal.`c_apellidos` AS t_personal_c_apellidos,
+     t_personal.`c_fecha_nac` AS t_personal_c_fecha_nac,
+     t_personal.`c_dni` AS t_personal_c_dni,
+     t_personal.`c_telefono` AS t_personal_c_telefono,
+     t_personal.`c_direccion` AS t_personal_c_direccion,
+     t_personal.`c_tipo` AS t_personal_c_tipo,
+     t_personal.`c_estado` AS t_personal_c_estado,
+     t_personal.`c_contrasena` AS t_personal_c_contrasena
+FROM
+     `t_personal` t_personal
+order by
+t_personal_c_tipo]]>
+	</queryString>
+	<field name="t_personal_id_personal" class="java.lang.Integer"/>
+	<field name="t_personal_c_nombres" class="java.lang.String"/>
+	<field name="t_personal_c_apellidos" class="java.lang.String"/>
+	<field name="t_personal_c_fecha_nac" class="java.sql.Date"/>
+	<field name="t_personal_c_dni" class="java.lang.String"/>
+	<field name="t_personal_c_telefono" class="java.lang.String"/>
+	<field name="t_personal_c_direccion" class="java.lang.String"/>
+	<field name="t_personal_c_tipo" class="java.lang.String"/>
+	<field name="t_personal_c_estado" class="java.lang.String"/>
+	<field name="t_personal_c_contrasena" class="java.lang.String"/>
+	<group name="t_personal_c_tipo">
+		<groupExpression><![CDATA[$F{t_personal_c_tipo}]]></groupExpression>
+		<groupHeader>
+			<band height="75">
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="0" width="188" height="32" forecolor="#666666" backcolor="#E6E6E6" uuid="44c2e6fb-f869-416c-8be5-f11b8bc1f646"/>
+					<textElement>
+						<font size="24"/>
+					</textElement>
+					<text><![CDATA[Tipo de Usuario :]]></text>
+				</staticText>
+				<textField>
+					<reportElement mode="Opaque" x="188" y="0" width="367" height="32" forecolor="#006699" backcolor="#E6E6E6" uuid="360a2437-f356-432b-94cd-c84994ee7ce5"/>
+					<textElement>
+						<font size="24" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{t_personal_c_tipo}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="-20" y="32" width="595" height="1" forecolor="#666666" uuid="28a7d414-b93d-41d6-ac2f-eca94a26b981"/>
+				</line>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="55" width="119" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="b7c0a46f-6ab1-42a2-8dd8-696cb0af8d45"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nombres]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="119" y="55" width="120" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="c2cec937-02d4-42f0-af71-816fe2168626"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Apellidos]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="239" y="55" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="b0c7437e-dbf1-47c9-af02-666cb5183c13"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[DNI]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="308" y="55" width="83" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="40e3f789-fdfa-4b27-acf4-53957e723b9f"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Telefono]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="391" y="55" width="109" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="a7a3b850-c5cb-4a25-b78d-dfe6cf799668"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Dirección]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="500" y="55" width="55" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="42011ba8-713c-4cd7-bfa6-7ca199f6dcdf"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Estado]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="be5d8f03-4665-498f-8053-c8add0ac302f"/>
+				<staticText>
+					<reportElement x="20" y="0" width="375" height="43" forecolor="#FFFFFF" uuid="a93a7344-3c6a-42f0-b976-0a287fa2732a"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Listado de Personal]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="296" y="43" width="279" height="20" forecolor="#FFFFFF" uuid="43d0bcb8-b482-41d7-9994-c210e50128e5"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Asociacion Civil Kaypi Kashianchis]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="da72cc3a-5fbb-426a-b13a-019b2c8f66f3"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="24" width="555" height="1" uuid="f4bdd1ac-47d0-4c1d-b5f9-414a7e7ba798"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="2" width="119" height="20" uuid="6492869d-6bc0-45c7-8ac8-83c53fcd4d89"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_personal_c_nombres}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="119" y="2" width="120" height="20" uuid="20ed8a01-d50b-486b-b621-9f1278e742ae"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_personal_c_apellidos}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="391" y="2" width="109" height="20" uuid="bf7ce6be-07a0-42b6-b5bb-a6363225006b"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_personal_c_direccion}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="500" y="2" width="55" height="20" uuid="26262e6a-dfc6-4059-bdf6-ac4a3c81cdf6"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_personal_c_estado}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="239" y="2" width="69" height="20" uuid="51823c27-2ff2-47db-9462-60188c79ad58"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_personal_c_dni}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="308" y="2" width="83" height="20" uuid="db994d9d-a422-4c6b-98d7-66ffb192e63c"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_personal_c_telefono}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="6ed864f0-d20c-405a-82aa-c1c5c59aed61"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="d0cbe567-1b9c-49f7-b8ce-19e38abff99d"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="8c87fc89-7b1c-4719-bdae-5680230834d3"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

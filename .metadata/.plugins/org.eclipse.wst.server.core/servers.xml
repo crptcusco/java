@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server hostname="localhost" id="J2EE Preview at localhost" name="J2EE Preview at localhost" runtime-id="J2EE Preview" server-type="org.eclipse.jst.server.preview.server" server-type-id="org.eclipse.jst.server.preview.server" start-timeout="240" stop-timeout="240" timestamp="1">
+    <list key="modules" value0="SpringApp::org.eclipse.jst.j2ee.server:SpringApp::jst.web::2.3"/>
+  </server>
+  <server auto-publish-time="1" hostname="localhost" id="JBoss EAP 6.4" name="JBoss EAP 6.4" org.jboss.ide.eclipse.as.core.server.EXPOSE_MANAGEMENT_SERVICE="true" org.jboss.ide.eclipse.as.core.server.IGNORE_LAUNCH_COMMANDS="false" org.jboss.ide.eclipse.as.core.server.attributes.shutdownPollerKey="org.jboss.ide.eclipse.as.core.runtime.server.WebPoller" org.jboss.ide.eclipse.as.core.server.attributes.startupPollerKey="org.jboss.ide.eclipse.as.core.runtime.server.WebPoller" org.jboss.ide.eclipse.as.core.server.deployDirectoryType="server" org.jboss.ide.eclipse.as.core.server.serverMode="local" runtime-id="JBoss EAP 6.4 Runtime" server-type="org.jboss.ide.eclipse.as.eap.61" server-type-id="org.jboss.ide.eclipse.as.eap.61" start-timeout="450" stop-timeout="450" timestamp="1">
+    <list key="modules" value0="mvc-test::org.eclipse.jst.jee.server:mvc-test::jst.web::3.0"/>
+  </server>
+  <server auto-publish-setting="1" glassfish.adminname="admin" glassfish.adminserverportnumber="4848" glassfish.domainpath="C:/Program Files/glassfish4/glassfish/domains/domain1" glassfish.jarDeploy="false" glassfish.keepSessions="true" glassfish.serverportnumber="8080" glassfish.useAnonymousConnection="true" hostname="localhost" id="GlassFish 4 at localhost [domain1]" name="GlassFish 4 at localhost [domain1]" runtime-id="GlassFish 4" server-type="org.glassfish.jst.server.glassfish4" server-type-id="org.glassfish.jst.server.glassfish4" start-timeout="240" stop-timeout="240" timestamp="13">
+    <list key="modules" value0="HibernateWeb::org.eclipse.jst.jee.server:HibernateWeb::jst.web::3.1"/>
+  </server>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v8.0 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v8.0 Server at localhost" name="Tomcat v8.0 Server at localhost" runtime-id="Apache Tomcat v8.0" server-type="org.eclipse.jst.server.tomcat.80" server-type-id="org.eclipse.jst.server.tomcat.80" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="2">
+    <list key="modules"/>
+  </server>
+</servers>

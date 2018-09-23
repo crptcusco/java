@@ -1,0 +1,104 @@
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-01-28 11:45:58.145
+!MESSAGE The server "JBoss EAP 6.4" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_65 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-01-28 11:47:51.339
+!MESSAGE The server "JBoss EAP 6.4" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_65 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-01-28 11:47:52.901
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-01-28 11:48:01.107
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-01-28 11:48:01.117
+!MESSAGE Module mvc-test on JBoss EAP 6.4 not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.wtp.core 1 16973825 2016-01-28 12:20:57.781
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-01-28 12:22:28.209
+!MESSAGE The server "JBoss EAP 6.4" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_65 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-01-28 12:22:29.268
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-01-28 12:22:36.487
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-01-28 12:22:36.510
+!MESSAGE Module mvc-test on JBoss EAP 6.4 not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 2 0 2016-01-28 12:22:56.534
+!MESSAGE Module mvc-test on JBoss EAP 6.4 still not ready to be shown in browser. Aborting delay.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-01-28 12:28:34.022
+!MESSAGE Module mvc-test on JBoss EAP 6.4 not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 2 0 2016-01-28 12:28:54.044
+!MESSAGE Module mvc-test on JBoss EAP 6.4 still not ready to be shown in browser. Aborting delay.
+
+!ENTRY org.jboss.ide.eclipse.as.wtp.core 1 16973825 2016-01-28 12:29:06.517
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-01-28 12:29:13.023
+!MESSAGE The server "JBoss EAP 6.4" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_65 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-01-28 12:29:14.099
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-01-28 12:29:20.122
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-01-28 12:29:20.141
+!MESSAGE Module mvc-test on JBoss EAP 6.4 not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 2 0 2016-01-28 12:29:40.164
+!MESSAGE Module mvc-test on JBoss EAP 6.4 still not ready to be shown in browser. Aborting delay.
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-01-28 12:54:30.133
+!MESSAGE The server "JBoss EAP 6.4" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_65 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-01-28 12:54:31.517
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-01-28 12:54:39.747
+!MESSAGE Module mvc-test on JBoss EAP 6.4 not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-01-28 12:54:40.175
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 2 0 2016-01-28 12:55:00.199
+!MESSAGE Module mvc-test on JBoss EAP 6.4 still not ready to be shown in browser. Aborting delay.
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2016-01-28 12:58:32.826
+!MESSAGE Incremental publish failed for module mvc-test
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 1644298251 2016-01-28 12:58:32.826
+!MESSAGE Error reading file C:\Users\DELTA\.m2\repository\com\oracle\ojdbc14\10.2.0.4.0\ojdbc14-10.2.0.4.0.jar
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2016-01-28 12:58:33.892
+!MESSAGE Incremental publish failed for module mvc-test
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 1644298251 2016-01-28 12:58:33.892
+!MESSAGE Error reading file C:\Users\DELTA\.m2\repository\com\oracle\ojdbc14\10.2.0.4.0\ojdbc14-10.2.0.4.0.jar
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2016-01-28 12:59:39.302
+!MESSAGE Incremental publish failed for module mvc-test
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 1644298251 2016-01-28 12:59:39.302
+!MESSAGE Error reading file C:\Users\DELTA\.m2\repository\com\oracle\ojdbc14\10.2.0.3.0\ojdbc14-10.2.0.3.0.jar
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2016-01-28 13:04:04.882
+!MESSAGE Incremental publish failed for module mvc-test
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 1644298251 2016-01-28 13:04:04.882
+!MESSAGE Error reading file C:\Users\DELTA\.m2\repository\com\oracle\ojdbc14\10.2.0.3.0\ojdbc14-10.2.0.3.0.jar
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2016-01-28 13:06:23.985
+!MESSAGE Incremental publish failed for module mvc-test
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 1644298251 2016-01-28 13:06:23.985
+!MESSAGE Error reading file C:\Users\DELTA\.m2\repository\com\oracle\ojdbc14\10.2.0.3.0\ojdbc14-10.2.0.3.0.jar
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2016-01-28 13:15:11.758
+!MESSAGE Incremental publish failed for module mvc-test
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 1644298251 2016-01-28 13:15:11.758
+!MESSAGE Error reading file C:\Users\DELTA\.m2\repository\com\oracle\ojdbc14\10.2.0.3.0\ojdbc14-10.2.0.3.0.jar

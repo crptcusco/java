@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporte3" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="00ff758a-f21c-43d2-bdf6-8c29ef291c68">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     t_campana.`id_campana` AS t_campana_id_campana,
+     t_campana.`c_nombre` AS t_campana_c_nombre,
+     t_campana.`c_contacto` AS t_campana_c_contacto,
+     t_campana.`c_fecha` AS t_campana_c_fecha,
+     t_campana.`c_lugar` AS t_campana_c_lugar,
+     t_campana.`c_observacion` AS t_campana_c_observacion,
+     t_campana.`c_conclusion` AS t_campana_c_conclusion,
+     t_campana.`c_estado` AS t_campana_c_estado,
+     t_campana_recurso.`id_campana` AS t_campana_recurso_id_campana,
+     t_campana_recurso.`id_recurso` AS t_campana_recurso_id_recurso,
+     t_campana_recurso.`c_cantidad` AS t_campana_recurso_c_cantidad,
+     t_campana_recurso.`c_costo_unitario` AS t_campana_recurso_c_costo_unitario,
+     t_recurso.`id_recurso` AS t_recurso_id_recurso,
+     t_recurso.`c_nombre` AS t_recurso_c_nombre,
+     t_recurso.`c_medida` AS t_recurso_c_medida
+FROM
+     `t_campana` t_campana INNER JOIN `t_campana_recurso` t_campana_recurso ON t_campana.`id_campana` = t_campana_recurso.`id_campana`
+     INNER JOIN `t_recurso` t_recurso ON t_campana_recurso.`id_recurso` = t_recurso.`id_recurso`]]>
+	</queryString>
+	<field name="t_campana_c_fecha" class="java.sql.Date"/>
+	<field name="t_campana_c_lugar" class="java.lang.String"/>
+	<field name="t_campana_c_estado" class="java.lang.String"/>
+	<field name="t_recurso_c_nombre" class="java.lang.String"/>
+	<field name="t_recurso_c_medida" class="java.lang.String"/>
+	<field name="t_recurso_id_recurso" class="java.lang.Integer"/>
+	<field name="t_campana_recurso_c_cantidad" class="java.lang.Integer"/>
+	<field name="t_campana_c_nombre" class="java.lang.String"/>
+	<group name="t_campana_c_nombre">
+		<groupExpression><![CDATA[$F{t_campana_c_nombre}]]></groupExpression>
+		<groupHeader>
+			<band height="137">
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="0" width="139" height="32" forecolor="#666666" backcolor="#E6E6E6" uuid="c1a2aeed-91b8-4d99-91f8-d8e618fe9a84"/>
+					<textElement>
+						<font size="24"/>
+					</textElement>
+					<text><![CDATA[Campaña]]></text>
+				</staticText>
+				<textField>
+					<reportElement mode="Opaque" x="139" y="0" width="416" height="32" forecolor="#006699" backcolor="#E6E6E6" uuid="94884f14-b4a1-4dc4-ab34-35e94d3dbdf6"/>
+					<textElement>
+						<font size="24" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{t_campana_c_nombre}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="-20" y="32" width="595" height="1" forecolor="#666666" uuid="4a21ca23-61e6-4501-be69-0b42b7252d9c"/>
+				</line>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="33" width="139" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="25059925-1224-4def-a51a-f68bd846a0a1"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Fecha y Hora]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="139" y="32" width="416" height="20" uuid="2aa0de69-7770-494e-b062-9171f87632cc"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{t_campana_c_fecha}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="53" width="139" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="eddab648-edb8-4617-a48a-ad14e0eb45e0"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Lugar]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="139" y="53" width="416" height="20" uuid="dd5a8610-5454-44ec-adab-030693ed7e34"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{t_campana_c_lugar}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="73" width="139" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="a6097a45-7b98-4ca9-b88b-57b76ef56575"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Estado]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="139" y="73" width="416" height="20" uuid="e06e9991-13fd-4362-96d8-ddf0b8ceb42c"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{t_campana_c_estado}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="79" y="106" width="79" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="1c70066b-fb59-4009-a74a-2430614505ec"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nombre]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="158" y="106" width="108" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="c58ed206-aeae-47c1-a7c0-9999c60aec94"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Medida]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="266" y="106" width="289" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="4b7ab535-81d5-4675-a0cf-4755adf5ae22"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Cantidad]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="106" width="79" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="83a27128-afdf-41c1-960f-c317f4b74518"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[id]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="01fcfe53-7dd0-4428-b6e1-b67a0498e2c3"/>
+				<staticText>
+					<reportElement x="23" y="0" width="394" height="43" forecolor="#FFFFFF" uuid="08a670f0-fe20-4a18-9367-f0dd5f6e6454"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Recurso por Campañas]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="313" y="43" width="262" height="20" forecolor="#FFFFFF" uuid="5f0bb1a4-ac50-4e50-9823-2700a3534a95"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Asociacion Civil Kaypi Kashianchis]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="24">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="ab1befb9-2ecc-48b8-8252-0e9d670bef85"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="22" width="555" height="1" uuid="ef43cdee-002b-4d36-b205-091fe77e69c5"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="79" height="20" uuid="e5d2e91b-da66-47e5-9ce1-625104c79183"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_recurso_id_recurso}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="79" y="1" width="79" height="20" uuid="4018c227-0748-47b0-869f-2e9b043166e2"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_recurso_c_nombre}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="158" y="1" width="108" height="20" uuid="9319037b-c73a-4fa5-b916-28881b803742"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_recurso_c_medida}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="266" y="1" width="109" height="20" uuid="5223e710-5dd5-42f8-b203-4c79d379b144"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_campana_recurso_c_cantidad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="5c0a293f-d07d-410b-b6e0-aac74855db35"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="d2f6b0f1-2e92-439d-8f70-59bce74da75c"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="205bb3e2-8f0f-4758-94a0-19f79e92fbbd"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

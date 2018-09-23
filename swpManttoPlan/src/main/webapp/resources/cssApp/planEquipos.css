@@ -1,0 +1,82 @@
+.content [data-vista]{
+display:none;
+}
+.table td {
+	font-size: 12px;
+}
+
+.table .badge {
+	font-weight: 500;
+}
+
+.table-responsive input {
+	margin-left: 12px;
+}
+
+.table-responsive label {
+	font-weight: 500;
+	padding-left: 4px;
+}
+
+.popover-content .table {
+	font-size: 11px !important;
+}
+/*#divtables > table,#divtables > span {
+			display:none
+		}*/
+.controls .pull-left {
+	margin-right: 6px;
+}
+
+#reportrange {
+	background: #fff;
+	cursor: pointer;
+	padding: 6px 8px;
+	border: 1px solid #ccc
+}
+
+.bg-0 {
+	background-color: #0073B7 !important;
+	color: #FFF;
+}
+
+.bg-1 {
+	background-color: #777 !important;
+	color: #FFF;
+}
+
+.bg-2 {
+	background-color: #00A65A !important;
+	color: #FFF;
+}
+
+.bg-3 {
+	background-color: #F39C12 !important;
+	color: #FFF;
+}
+
+.bg-4 {
+	background-color: #DD4B39 !important;
+	color: #FFF;
+}
+
+.bg-5 {
+	background-color: #45007B !important;
+	color: #FFF;
+}
+.bg-c {
+	background-color: #000 !important;
+	color: #FFF;
+}
+.table-bordered > thead > tr > th, .table-bordered > thead > tr > td {
+    border-bottom-width: 2px;
+    min-width: 50px;
+}
+.popover .btn{
+	padding: 0 4px;
+}
+#txtHist{
+	width: 48%;
+	display: inline-block;
+}
+#alldetalleEquipo tbody tr:not([data-planeid]){ display: none}

@@ -1,0 +1,53 @@
+package com.modelo.bo;
+
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
+import javax.persistence.CascadeType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
+@Entity
+@Table(name = "libro", catalog = "db_hibernate", uniqueConstraints = { @UniqueConstraint(columnNames = "STOCK_NAME"),
+		@UniqueConstraint(columnNames = "STOCK_CODE")})
+public class Libro implements java.io.Serializable {
+	@GeneratedValue
+	@Id
+	private Integer idLibro;
+	private String nombreLibro;
+
+	public Libro(Integer idLibro, String nombreLibro) {
+		super();
+		this.idLibro = idLibro;
+		this.nombreLibro = nombreLibro;
+	}
+
+	public Libro() {
+
+	}
+
+	public Integer getIdLibro() {
+		return idLibro;
+	}
+
+	public void setIdLibro(Integer idLibro) {
+		this.idLibro = idLibro;
+	}
+
+	public String getNombreLibro() {
+		return nombreLibro;
+	}
+
+	public void setNombreLibro(String nombreLibro) {
+		this.nombreLibro = nombreLibro;
+	}
+
+}

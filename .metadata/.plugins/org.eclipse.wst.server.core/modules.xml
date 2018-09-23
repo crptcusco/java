@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<modules>
+  <module moduleId="org.eclipse.jst.j2ee.server:SpringApp" serverId="GlassFish 4 at localhost [domain1]"/>
+  <module moduleId="org.eclipse.jst.jee.server:mvc-test" serverId="JBoss EAP 6.4"/>
+  <module moduleId="org.eclipse.jst.jee.server:HibernateWeb" serverId="GlassFish 4 at localhost [domain1]"/>
+</modules>

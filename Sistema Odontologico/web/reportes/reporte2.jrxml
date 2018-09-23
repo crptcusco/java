@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporte2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c27bd900-d7b1-4bb6-89d0-44929d7e24a9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     t_campana.`id_campana` AS t_campana_id_campana,
+     t_campana.`c_nombre` AS t_campana_c_nombre,
+     t_campana.`c_contacto` AS t_campana_c_contacto,
+     t_campana.`c_fecha` AS t_campana_c_fecha,
+     t_campana.`c_lugar` AS t_campana_c_lugar,
+     t_campana.`c_observacion` AS t_campana_c_observacion,
+     t_campana.`c_conclusion` AS t_campana_c_conclusion,
+     t_campana.`c_estado` AS t_campana_c_estado,
+     t_recurso.`id_recurso` AS t_recurso_id_recurso,
+     t_recurso.`c_nombre` AS t_recurso_c_nombre,
+     t_recurso.`c_medida` AS t_recurso_c_medida,
+     t_campana_recurso.`id_campana` AS t_campana_recurso_id_campana,
+     t_campana_recurso.`id_recurso` AS t_campana_recurso_id_recurso,
+     t_campana_recurso.`c_cantidad` AS t_campana_recurso_c_cantidad,
+     t_campana_recurso.`c_costo_unitario` AS t_campana_recurso_c_costo_unitario
+FROM
+     `t_campana` t_campana INNER JOIN `t_campana_recurso` t_campana_recurso ON t_campana.`id_campana` = t_campana_recurso.`id_campana`
+     INNER JOIN `t_recurso` t_recurso ON t_campana_recurso.`id_recurso` = t_recurso.`id_recurso`
+order by t_campana_c_nombre]]>
+	</queryString>
+	<field name="t_campana_id_campana" class="java.lang.Integer"/>
+	<field name="t_campana_c_nombre" class="java.lang.String"/>
+	<field name="t_campana_c_contacto" class="java.lang.String"/>
+	<field name="t_campana_c_fecha" class="java.sql.Date"/>
+	<field name="t_campana_c_lugar" class="java.lang.String"/>
+	<field name="t_campana_c_observacion" class="java.lang.String"/>
+	<field name="t_campana_c_conclusion" class="java.lang.String"/>
+	<field name="t_campana_c_estado" class="java.lang.String"/>
+	<field name="t_recurso_id_recurso" class="java.lang.Integer"/>
+	<field name="t_recurso_c_nombre" class="java.lang.String"/>
+	<field name="t_recurso_c_medida" class="java.lang.String"/>
+	<field name="t_campana_recurso_id_campana" class="java.lang.Integer"/>
+	<field name="t_campana_recurso_id_recurso" class="java.lang.Integer"/>
+	<field name="t_campana_recurso_c_cantidad" class="java.lang.Integer"/>
+	<field name="t_campana_recurso_c_costo_unitario" class="java.lang.Double"/>
+	<variable name="variable1" class="java.lang.Double" resetType="Column" incrementType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{t_campana_recurso_c_cantidad}*$F{t_campana_recurso_c_costo_unitario}]]></variableExpression>
+	</variable>
+	<variable name="variable2" class="java.lang.Double" resetType="Group" resetGroup="t_campana_c_nombre" calculation="Sum">
+		<variableExpression><![CDATA[$V{variable1}]]></variableExpression>
+	</variable>
+	<group name="t_campana_c_nombre">
+		<groupExpression><![CDATA[$F{t_campana_c_nombre}]]></groupExpression>
+		<groupHeader>
+			<band height="71">
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="0" width="138" height="32" forecolor="#666666" backcolor="#E6E6E6" uuid="e9fc46e4-db7f-4177-a494-826dbd08d123"/>
+					<textElement>
+						<font size="24"/>
+					</textElement>
+					<text><![CDATA[Campana]]></text>
+				</staticText>
+				<textField>
+					<reportElement mode="Opaque" x="138" y="0" width="262" height="32" forecolor="#006699" backcolor="#E6E6E6" uuid="a5c024ea-e9b8-4117-aa52-3aa21011aed2"/>
+					<textElement>
+						<font size="24" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{t_campana_c_nombre}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="-20" y="38" width="595" height="1" forecolor="#666666" uuid="4c9f262d-4b55-4020-8508-2c4d5625f13d"/>
+				</line>
+				<staticText>
+					<reportElement mode="Opaque" x="345" y="46" width="66" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="6f4d3ad9-67e3-4085-b032-780160f68e28"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[P. U.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="46" width="138" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="c30377c6-e26b-42a0-b871-b5b6ccbb5de9"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Recurso]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="138" y="46" width="138" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="2e1f650d-eab6-4ba5-a9ad-1ad1ea967c28"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Medida]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="276" y="46" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="c3df805d-7510-4601-8409-adeb8f96470c"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Cantidad]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="400" y="0" width="68" height="32" forecolor="#666666" backcolor="#E6E6E6" uuid="c4e58854-bba9-4666-88f4-5f23074a5912"/>
+					<textElement>
+						<font size="24"/>
+					</textElement>
+					<text><![CDATA[Total :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="411" y="46" width="144" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="286f9dd6-1d04-4eb7-a026-b35fc0bbdf55"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[SubTotal]]></text>
+				</staticText>
+				<textField evaluationTime="Group" evaluationGroup="t_campana_c_nombre">
+					<reportElement x="468" y="0" width="87" height="32" uuid="f3c1e2e6-41bb-4509-9065-e907412d52f9"/>
+					<textElement>
+						<font size="24"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{variable2}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="363d0c92-3923-4c18-af4a-6a7ed0ebc1a4"/>
+				<staticText>
+					<reportElement x="20" y="0" width="375" height="43" forecolor="#FFFFFF" uuid="d7c9bbf9-d954-43bc-99b4-6396ea1f2e00"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Costos de Campaña]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="310" y="43" width="265" height="20" forecolor="#FFFFFF" uuid="2ff8d441-a1a9-4df1-b5d6-4ea15c11b40f"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Asociacion Civil Kaypi Kashianchis]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band/>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="cf21cea6-35a2-4c8c-a3c6-da01cefee617"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="138" height="20" uuid="c8ac1642-7c90-4c93-acce-87ecf8c16e76"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_recurso_c_nombre}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="138" y="0" width="138" height="20" uuid="84ed6f4b-9c14-4cb0-a7b7-24811392cfb4"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_recurso_c_medida}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="276" y="0" width="69" height="20" uuid="c2a71cb2-c55c-49f6-885e-be55587b51ca"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_campana_recurso_c_cantidad}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="345" y="0" width="66" height="20" uuid="841d6249-54df-459c-bc65-5b94d1decaee"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{t_campana_recurso_c_costo_unitario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="411" y="-1" width="100" height="20" uuid="808c576a-4902-4edf-b100-607fcf18e68f"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{variable1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="19">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="79bd032a-77af-41c8-b06a-2514e806e3e4"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="6a8fab38-d534-4368-af4b-0be65d1aeacd"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="1f5c2748-4970-424b-9fb9-15265db7191a"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

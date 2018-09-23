@@ -1,0 +1,5 @@
+package com.modelo.dao;
+
+public class LibroDAO {
+
+}
